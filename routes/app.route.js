@@ -1,10 +1,10 @@
 const express = require('express');
 const Book = require('../models/app.model');
+const { verifyAccessToken } = require('../jwt');
 const router = express.Router();
 
-
 // get all records 
-router.get('/', async (req, res) => {
+router.get('/', verifyAccessToken,  async (req, res) => {
 
     try {
         const books = await Book.find();
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
 
 // get one collection by id 
-router.get('/:id', async (req, res) => {
+router.get('/:id', verifyAccessToken, async (req, res) => {
 
     try {
 
@@ -40,7 +40,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // create a new record 
-router.post('/', async (req, res) => {
+router.post('/', verifyAccessToken, async (req, res) => {
 
     try {
         const { title, author, pages, genre } = req.body;
@@ -62,7 +62,7 @@ router.post('/', async (req, res) => {
 
 
 // update a collection by id 
-router.put('/:id', async (req, res) => {
+router.put('/:id', verifyAccessToken, async (req, res) => {
 
     try {
         const { id } = req.params;
@@ -78,7 +78,7 @@ router.put('/:id', async (req, res) => {
 
 
 // delete a collection by id 
-router.delete('/:id', async(req, res) => {
+router.delete('/:id', verifyAccessToken, async(req, res) => {
 
     try {
         const {id} = req.params;

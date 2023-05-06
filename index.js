@@ -8,8 +8,13 @@ require('./db_connect');
 app.use(express.json());
 
 
+const userRoute = require('./routes/user.route');
+app.use('/api/user', userRoute);
+
 const appRoute = require('./routes/app.route');
 app.use('/api/books', appRoute);
+
+
 
 
 app.listen(port, () => console.log(`App running on port ${port}!`))
