@@ -12,8 +12,13 @@ once login/register user will receive a JWT to access the system
 To access the system User need to set header -> key="Authorization", value="GENERATED_JWT"
 
 
-Get all books - GET : localhost:3000/api/books (SET "authorization" header "GENERATED_JWT") <br />
-Get a book - GET : localhost:3000/api/books/:id (SET "authorization" header "GENERATED_JWT", and id of a book that user wants) <br />
-Post a book - POST : localhost:3000/api/books (SET "authorization" header "GENERATED_JWT", pass data {"title","auther","pages","genre"} is JSON format)<br />
-Update a book - PUT : localhost:3000/api/books/:id (SET "authorization" header "GENERATED_JWT", pass data that user wants to update in JSON format)<br />
-Delete a book - DELETE : localhost:3000/api/books/:id (SET "authorization" header "GENERATED_JWT", pass id of book that user wants to delete)<br />
+Get all books - GET : localhost:3000/api/books (SET "authorization" header "GENERATED_JWT") 
+<br /><br />
+Get a book - GET : localhost:3000/api/books/:id (SET "authorization" header "GENERATED_JWT", and id of a book that user wants) 
+<br /><br />
+Post a book - POST : localhost:3000/api/books (SET "authorization" header "GENERATED_JWT", pass data {"title","auther","pages","genre"} is JSON format)
+<br /><br />
+Update a book - PUT : localhost:3000/api/books/:id (SET "authorization" header "GENERATED_JWT", pass data that user wants to update in JSON format)
+<br /><br />
+Delete a book - DELETE : localhost:3000/api/books/:id (SET "authorization" header "GENERATED_JWT", pass id of book that user wants to delete)
+<br /><br />
